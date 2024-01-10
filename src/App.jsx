@@ -8,9 +8,9 @@ import Profile from "./pages/Profile";
 
 const App = () => {
   return (
-    <div className=" bg-[#e7e7e9] p-4 h-screen">
-      <div className=" bg-white shadow-lg h-full rounded-3xl flex ">
-        <div>
+    <div className="lg:bg-[#e7e7e9] bg-white  h-screen lg:p-4  w-screen">
+      <div className="bg-white lg:shadow-lg h-full rounded-3xl flex lg:flex-row flex-col">
+        <div >
           <SideBar />
         </div>
         <div className=" flex-1">

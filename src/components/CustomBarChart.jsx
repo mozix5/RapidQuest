@@ -90,21 +90,30 @@ const CustomBarChart = () => {
       Employee: 135,
     },
   ];
-  const Legend = ({color,type,value}) => {
+  const numericStyle = "text-[#343434] font-nunito";
+  const headingText = " text-[#343434] font-bitter";
+  const subHeadingText = "text-[1.5rem] text-[#343434] font-bitter lg:text-sm";
+  const lightText = "lg:text-xs text-lg font-semibold text-[#adadad]";
+  const baseText = "text-[1.4rem] text-[#343434] text-lg lg:text-xs font-bold";
+
+  const Legend = ({ color, type, value }) => {
     return (
-      <div className="flex flex-1 items-center gap-2">
-        <div className={`w-3 h-2 rounded-xl`} style={{background:color}}></div>
-        <div className="text-xs">{type}:</div>
-        <div>K {value}</div>
+      <div className="flex flex-1 flex-col lg:flex-row lg:items-center gap-2  ">
+        <div
+          className={`w-3 h-2 rounded-xl`}
+          style={{ background: color }}
+        ></div>
+        <div className={`${lightText}`}>{type}:</div>
+        <div className={` text-xl ${baseText}`}>K {value}</div>
       </div>
     );
   };
   return (
-    <div className="h-[25vh] w-full ">
-      <div className="flex py-4">
-        <Legend color='#0800a3' type='Employer' value='73,500'/>
-        <Legend color='#4935ff' type='Employee' value='52,500'/>
-        <Legend color='#85afff' type='Total Interest' value='244,313'/>
+    <div className="h-[25vh] min-w-[30vh] ">
+      <div className="flex py-5">
+        <Legend color="#0800a3" type="Employer" value="73,500" />
+        <Legend color="#4935ff" type="Employee" value="52,500" />
+        <Legend color="#85afff" type="Total Interest" value="244,313" />
       </div>
       <ResponsiveContainer width="100%" height="100%">
         <BarChart
@@ -123,12 +132,12 @@ const CustomBarChart = () => {
           <YAxis
             tickLine={false}
             axisLine={false}
-            ticks={[0,100, 200, 300, 400]}
+            ticks={[0, 100, 200, 300, 400]}
           />
           <Tooltip />
           {/* <Legend verticalAlign='top' align='left' iconType='circle'/> */}
-          <Bar dataKey="Employer" stackId="a" fill="#0800a3" barSize={20} />
-          <Bar dataKey="Employee" stackId="a" fill="#4935ff" barSize={20} />
+          <Bar dataKey="Employer" stackId="a" fill="#0800a3" barSize={15} />
+          <Bar dataKey="Employee" stackId="a" fill="#4935ff" barSize={15} />
           <Bar
             dataKey="totalInterest"
             stackId="a"
